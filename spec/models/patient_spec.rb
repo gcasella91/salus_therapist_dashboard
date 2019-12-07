@@ -4,6 +4,8 @@ RSpec.describe Patient, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:sessions) }
+
     it { should belong_to(:therapist) }
 
     end
