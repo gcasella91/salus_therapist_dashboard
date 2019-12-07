@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :patients,
+             :foreign_key => "therapist_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
