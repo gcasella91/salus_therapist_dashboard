@@ -1,4 +1,6 @@
 ActiveAdmin.register Session do
+
+ permit_params :therapist_id, :patient_id, :date, :notes, :price
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
