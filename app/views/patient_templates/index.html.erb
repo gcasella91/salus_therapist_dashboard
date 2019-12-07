@@ -1,0 +1,102 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All patients
+    </h1>
+
+    <a href="/patients/new" class="btn btn-block btn-outline-secondary">
+      Add a new patient
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Patient name
+        </th>
+
+        <th>
+          Patient email
+        </th>
+
+        <th>
+          Therapist
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @patients.each do |patient| %>
+      <tr>
+        <!-- Display patient.id start -->
+        <td>
+          <%= patient.id %>
+        </td>
+        <!-- Display patient.id end -->
+
+        <!-- Display patient.patient_name start -->
+        <td>
+          <%= patient.patient_name %>
+        </td>
+        <!-- Display patient.patient_name end -->
+
+        <!-- Display patient.patient_email start -->
+        <td>
+          <%= patient.patient_email %>
+        </td>
+        <!-- Display patient.patient_email end -->
+
+        <!-- Display patient.therapist_id start -->
+        <td>
+          <%= patient.therapist_id %>
+        </td>
+        <!-- Display patient.therapist_id end -->
+
+        <!-- Display patient.created_at start -->
+        <td>
+          <%= time_ago_in_words(patient.created_at) %> ago
+        </td>
+        <!-- Display patient.created_at end -->
+
+        <!-- Display patient.updated_at start -->
+        <td>
+          <%= time_ago_in_words(patient.updated_at) %> ago
+        </td>
+        <!-- Display patient.updated_at end -->
+
+        <td>
+          <a href="/patients/<%= patient.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

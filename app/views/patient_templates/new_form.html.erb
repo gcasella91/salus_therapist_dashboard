@@ -1,0 +1,57 @@
+<h1>
+  Add a new patient
+</h1>
+
+
+<hr>
+
+<!-- Form patient start -->
+<form action="/create_patient" method="post">
+<!-- Form patient end -->
+
+  <!-- Label and input for patient_name start -->
+  <div class="form-group">
+    <label for="patient_name">
+      Patient name
+    </label>
+
+    <!-- Input for patient_name start -->
+    <input type="text" id="patient_name" name="patient_name" class="form-control">
+    <!-- Input for patient_name end -->
+  </div>
+  <!-- Label and input for patient_name end -->
+
+  <!-- Label and input for patient_email start -->
+  <div class="form-group">
+    <label for="patient_email">
+      Patient email
+    </label>
+
+    <!-- Input for patient_email start -->
+    <input type="text" id="patient_email" name="patient_email" class="form-control">
+    <!-- Input for patient_email end -->
+  </div>
+  <!-- Label and input for patient_email end -->
+
+  <!-- Label and input for therapist_id start -->
+  <div class="form-group">
+    <label for="therapist_id">
+      Therapist
+    </label>
+
+    <!-- Input for therapist_id start -->
+    <input type="text" id="therapist_id" name="therapist_id" class="form-control">
+    <!-- Input for therapist_id end -->
+  </div>
+  <!-- Label and input for therapist_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create patient
+  </button>
+</form>
+
+<hr>
+
+<a href="/patients">
+  Go back
+</a>
