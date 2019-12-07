@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link session start -->
       <div class="col">
         <% if current_user == @session.therapist %>
           <a href="/sessions/<%= @session.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link session end -->
 
-      <!-- Delete link session start -->
       <div class="col">
         <% if current_user == @session.therapist %>
           <a href="/delete_session/<%= @session.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link session end -->
     </div>
 
     <dl>
       <dt>
         Therapist
       </dt>
-      <!-- Display therapist_id start -->
       <dd>
         <% if @session.therapist.present? %>
           <a href="/users/<%= @session.therapist_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display therapist_id end -->
 
       <dt>
         Patient
       </dt>
-      <!-- Display patient_id start -->
       <dd>
         <% if @session.patient.present? %>
           <a href="/patients/<%= @session.patient_id %>">
@@ -57,55 +50,42 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display patient_id end -->
 
       <dt>
         Date
       </dt>
-      <!-- Display date start -->
       <dd>
         <%= @session.date %>
       </dd>
-      <!-- Display date end -->
 
       <dt>
         Notes
       </dt>
-      <!-- Display notes start -->
       <dd>
         <%= @session.notes %>
       </dd>
-      <!-- Display notes end -->
 
       <dt>
         Price
       </dt>
-      <!-- Display price start -->
       <dd>
         <%= @session.price %>
       </dd>
-      <!-- Display price end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@session.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@session.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

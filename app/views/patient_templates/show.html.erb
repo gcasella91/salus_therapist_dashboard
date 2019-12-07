@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link patient start -->
       <div class="col">
         <% if current_user == @patient.therapist %>
           <a href="/patients/<%= @patient.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link patient end -->
 
-      <!-- Delete link patient start -->
       <div class="col">
         <% if current_user == @patient.therapist %>
           <a href="/delete_patient/<%= @patient.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,32 +26,26 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link patient end -->
     </div>
 
     <dl>
       <dt>
         Patient name
       </dt>
-      <!-- Display patient_name start -->
       <dd>
         <%= @patient.patient_name %>
       </dd>
-      <!-- Display patient_name end -->
 
       <dt>
         Patient email
       </dt>
-      <!-- Display patient_email start -->
       <dd>
         <%= @patient.patient_email %>
       </dd>
-      <!-- Display patient_email end -->
 
       <dt>
         Therapist
       </dt>
-      <!-- Display therapist_id start -->
       <dd>
         <% if @patient.therapist.present? %>
           <a href="/users/<%= @patient.therapist_id %>">
@@ -62,33 +53,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display therapist_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@patient.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@patient.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "patient_templates/patient_sessions" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

@@ -4,36 +4,24 @@
 
 <hr>
 
-<!-- Form patient start -->
 <form action="/update_patient/<%= @patient.id %>" method="post">
-<!-- Form patient end -->
 
-  <!-- Label and input for patient_name start -->
   <div class="form-group">
     <label for="patient_name">
       Patient name
     </label>
 
-    <!-- Input for patient_name start -->
     <input type="text" id="patient_name" name="patient_name" class="form-control" value="<%= @patient.patient_name %>">
-    <!-- Input for patient_name end -->
   </div>
-  <!-- Label and input for patient_name end -->
 
-  <!-- Label and input for patient_email start -->
   <div class="form-group">
     <label for="patient_email">
       Patient email
     </label>
 
-    <!-- Input for patient_email start -->
     <input type="text" id="patient_email" name="patient_email" class="form-control" value="<%= @patient.patient_email %>">
-    <!-- Input for patient_email end -->
   </div>
-  <!-- Label and input for patient_email end -->
 
-  <!-- Label and input for therapist_id start -->
-  <!-- Label and input for therapist_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update patient
