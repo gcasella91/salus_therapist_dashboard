@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :sessions,
+             :foreign_key => "therapist_id",
+             :dependent => :destroy
+
   has_many   :patients,
              :foreign_key => "therapist_id",
              :dependent => :destroy
