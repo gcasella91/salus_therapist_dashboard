@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/sessions/new", { :controller => "sessions", :action => "new_form" })
   post("/create_session", { :controller => "sessions", :action => "create_row" })
+  post("/create_session_from_patient", { :controller => "sessions", :action => "create_row_from_patient" })
 
   # READ
   get("/sessions", { :controller => "sessions", :action => "index" })

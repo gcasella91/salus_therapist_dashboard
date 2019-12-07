@@ -6,6 +6,7 @@ class PatientsController < ApplicationController
   end
 
   def show
+    @session = Session.new
     @patient = Patient.find(params.fetch("id_to_display"))
 
     render("patient_templates/show.html.erb")

@@ -35,6 +35,24 @@ class SessionsController < ApplicationController
     end
   end
 
+  def create_row_from_patient
+    @session = Session.new
+
+    @session.therapist_id = params.fetch("therapist_id")
+    @session.patient_id = params.fetch("patient_id")
+    @session.date = params.fetch("date")
+    @session.notes = params.fetch("notes")
+    @session.price = params.fetch("price")
+
+    if @session.valid?
+      @session.save
+
+      redirect_to("/patients/#{@session.patient_id}", notice: "Session created successfully.")
+    else
+      render("session_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @session = Session.find(params.fetch("prefill_with_id"))
 
