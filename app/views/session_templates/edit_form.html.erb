@@ -1,0 +1,80 @@
+<h1>
+  Edit session #<%= @session.id %>
+</h1>
+
+<hr>
+
+<!-- Form session start -->
+<form action="/update_session/<%= @session.id %>" method="post">
+<!-- Form session end -->
+
+  <!-- Label and input for therapist_id start -->
+  <div class="form-group">
+    <label for="therapist_id">
+      Therapist
+    </label>
+
+    <!-- Input for therapist_id start -->
+    <input type="text" id="therapist_id" name="therapist_id" class="form-control" value="<%= @session.therapist_id %>">
+    <!-- Input for therapist_id end -->
+  </div>
+  <!-- Label and input for therapist_id end -->
+
+  <!-- Label and input for patient_id start -->
+  <div class="form-group">
+    <label for="patient_id">
+      Patient
+    </label>
+
+    <!-- Input for patient_id start -->
+    <input type="text" id="patient_id" name="patient_id" class="form-control" value="<%= @session.patient_id %>">
+    <!-- Input for patient_id end -->
+  </div>
+  <!-- Label and input for patient_id end -->
+
+  <!-- Label and input for date start -->
+  <div class="form-group">
+    <label for="date">
+      Date
+    </label>
+
+    <!-- Input for date start -->
+    <input type="text" id="date" name="date" class="form-control" value="<%= @session.date %>">
+    <!-- Input for date end -->
+  </div>
+  <!-- Label and input for date end -->
+
+  <!-- Label and input for notes start -->
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <!-- Input for notes start -->
+    <textarea id="notes" name="notes" class="form-control" rows="3"><%= @session.notes %></textarea>
+    <!-- Input for notes end -->
+  </div>
+  <!-- Label and input for notes end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <label for="price">
+      Price
+    </label>
+
+    <!-- Input for price start -->
+    <input type="text" id="price" name="price" class="form-control" value="<%= @session.price %>">
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update session
+  </button>
+</form>
+
+<hr>
+
+<a href="/sessions">
+  Go back
+</a>
