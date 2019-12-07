@@ -13,17 +13,21 @@
 
       <!-- Edit link patient start -->
       <div class="col">
-        <a href="/patients/<%= @patient.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit patient
-        </a>
+        <% if current_user == @patient.therapist %>
+          <a href="/patients/<%= @patient.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit patient
+          </a>
+        <% end %>
       </div>
       <!-- Edit link patient end -->
 
       <!-- Delete link patient start -->
       <div class="col">
-        <a href="/delete_patient/<%= @patient.id %>" class="btn btn-block btn-outline-secondary">
-          Delete patient
-        </a>
+        <% if current_user == @patient.therapist %>
+          <a href="/delete_patient/<%= @patient.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete patient
+          </a>
+        <% end %>
       </div>
       <!-- Delete link patient end -->
     </div>
