@@ -36,7 +36,7 @@
     </label>
 
     <!-- Input for patient_id start -->
-    <input type="text" id="patient_id" name="patient_id" class="form-control" value="<%= @session.patient_id %>">
+    <%= select_tag(:patient_id, options_from_collection_for_select(Patient.all, :id, :patient_name, @session.patient_id), :class => "form-control") %>
     <!-- Input for patient_id end -->
   </div>
   <!-- Label and input for patient_id end -->
