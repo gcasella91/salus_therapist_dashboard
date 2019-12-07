@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   end
 
   def index
-    @sessions = Session.all
+    @sessions = Session.page(params[:page]).per(10)
 
     render("session_templates/index.html.erb")
   end
