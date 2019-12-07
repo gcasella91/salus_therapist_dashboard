@@ -10,15 +10,9 @@
 <!-- Form session end -->
 
   <!-- Label and input for therapist_id start -->
-  <div class="form-group">
-    <label for="therapist_id">
-      Therapist
-    </label>
-
-    <!-- Input for therapist_id start -->
-    <%= select_tag(:therapist_id, options_from_collection_for_select(User.all, :id, :email, @session.therapist_id), :class => "form-control") %>
-    <!-- Input for therapist_id end -->
-  </div>
+  <!-- Input for "therapist_id" start -->
+  <input type="hidden" name="therapist_id" value="<%= current_user.id %>">
+  <!-- Input for "therapist_id" end -->
   <!-- Label and input for therapist_id end -->
 
   <!-- Label and input for patient_id start -->

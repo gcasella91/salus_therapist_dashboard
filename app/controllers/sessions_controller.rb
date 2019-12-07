@@ -62,7 +62,7 @@ class SessionsController < ApplicationController
   def update_row
     @session = Session.find(params.fetch("id_to_modify"))
 
-    @session.therapist_id = params.fetch("therapist_id")
+    
     @session.patient_id = params.fetch("patient_id")
     @session.date = params.fetch("date")
     @session.notes = params.fetch("notes")
