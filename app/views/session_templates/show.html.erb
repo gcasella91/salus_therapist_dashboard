@@ -38,7 +38,11 @@
       </dt>
       <!-- Display therapist_id start -->
       <dd>
-        <%= @session.therapist_id %>
+        <% if @session.therapist.present? %>
+          <a href="/users/<%= @session.therapist_id %>">
+            <%= @session.therapist.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display therapist_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display patient_id start -->
       <dd>
-        <%= @session.patient_id %>
+        <% if @session.patient.present? %>
+          <a href="/patients/<%= @session.patient_id %>">
+            <%= @session.patient.patient_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display patient_id end -->
 

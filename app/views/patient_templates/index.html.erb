@@ -74,7 +74,11 @@
 
         <!-- Display patient.therapist_id start -->
         <td>
-          <%= patient.therapist.email %>
+          <% if patient.therapist.present? %>
+            <a href="/users/<%= patient.therapist.id %>">
+              <%= patient.therapist.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display patient.therapist_id end -->
 

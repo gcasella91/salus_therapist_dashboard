@@ -56,7 +56,11 @@
       </dt>
       <!-- Display therapist_id start -->
       <dd>
-        <%= @patient.therapist_id %>
+        <% if @patient.therapist.present? %>
+          <a href="/users/<%= @patient.therapist_id %>">
+            <%= @patient.therapist.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display therapist_id end -->
 

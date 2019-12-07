@@ -70,13 +70,21 @@
 
         <!-- Display session.therapist_id start -->
         <td>
-          <%= session.therapist.email %>
+          <% if session.therapist.present? %>
+            <a href="/users/<%= session.therapist.id %>">
+              <%= session.therapist.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display session.therapist_id end -->
 
         <!-- Display session.patient_id start -->
         <td>
-          <%= session.patient.patient_name %>
+          <% if session.patient.present? %>
+            <a href="/patients/<%= session.patient.id %>">
+              <%= session.patient.patient_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display session.patient_id end -->
 
