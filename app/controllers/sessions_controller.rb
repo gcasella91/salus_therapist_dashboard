@@ -59,6 +59,22 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_therapist
+    @session = Session.find(params.fetch("id_to_remove"))
+
+    @session.destroy
+
+    redirect_to("/users/#{@session.therapist_id}", notice: "Session deleted successfully.")
+  end
+
+  def destroy_row_from_patient
+    @session = Session.find(params.fetch("id_to_remove"))
+
+    @session.destroy
+
+    redirect_to("/patients/#{@session.patient_id}", notice: "Session deleted successfully.")
+  end
+
   def destroy_row
     @session = Session.find(params.fetch("id_to_remove"))
 
