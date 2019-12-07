@@ -33,15 +33,6 @@
   <!-- Label and input for patient_email end -->
 
   <!-- Label and input for therapist_id start -->
-  <div class="form-group">
-    <label for="therapist_id">
-      Therapist
-    </label>
-
-    <!-- Input for therapist_id start -->
-    <%= select_tag(:therapist_id, options_from_collection_for_select(User.all, :id, :email, @patient.therapist_id), :class => "form-control") %>
-    <!-- Input for therapist_id end -->
-  </div>
   <!-- Label and input for therapist_id end -->
 
   <button class="btn btn-block btn-outline-secondary">

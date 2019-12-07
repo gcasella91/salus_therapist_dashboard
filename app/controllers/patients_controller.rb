@@ -45,7 +45,7 @@ class PatientsController < ApplicationController
 
     @patient.patient_name = params.fetch("patient_name")
     @patient.patient_email = params.fetch("patient_email")
-    @patient.therapist_id = params.fetch("therapist_id")
+    
 
     if @patient.valid?
       @patient.save
