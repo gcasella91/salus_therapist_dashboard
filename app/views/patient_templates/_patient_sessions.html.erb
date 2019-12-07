@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_session_from_patient/<%= session.id %>">
-          Delete
-        </a>
+        <%if current_user == session.therapist %>
+          <a href="/delete_session_from_patient/<%= session.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
